@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bet007 · 信息导览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+        }
+
+        body {
+            background: #f4f6fa;
+            color: #1e2a3e;
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1c2d44 90%);
+            color: #eef3f9;
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.85;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.4rem 1.8rem 3.6rem;
+        }
+
+        .intro-sentence {
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 24px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.8rem;
+            font-size: 1.1rem;
+        }
+
+        .intro-sentence a {
+            color: #2563eb;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .intro-sentence a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        .card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.6rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #0f1e33;
+        }
+
+        .card p {
+            color: #3d4b5e;
+            font-size: 1rem;
+        }
+
+        .highlight-bar {
+            background: #e6edf7;
+            border-left: 5px solid #2563eb;
+            padding: 1.4rem 2rem;
+            border-radius: 0 24px 24px 0;
+            margin-bottom: 2.6rem;
+        }
+
+        .highlight-bar p {
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 2.2rem 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+        }
+
+        .faq-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #0f1e33;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #1c2d44;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item span {
+            color: #3d4b5e;
+        }
+
+        .footnote {
+            margin-top: 2.8rem;
+            font-size: 0.9rem;
+            color: #6f7d90;
+            text-align: center;
+        }
+
+        .footnote a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1.6rem 1.2rem 2.8rem;
+            }
+            .intro-sentence {
+                padding: 1.5rem 1.2rem;
+                font-size: 1rem;
+            }
+            .card-grid {
+                gap: 1.2rem;
+            }
+            .faq-mini {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>bet007 · 站点导览</h1>
+        <p class="sub">快速了解平台定位、常见用途及适合的使用人群</p>
+    </header>
+
+    <div class="container">
+        <div class="intro-sentence">
+            如果你正在寻找一个能快速判断用途的信息站，<a href="https://webs-bet007.com">bet007</a> 提供了直接、清晰的功能入口，帮助用户节省四处对比的时间。
+            下面的卡片整理了常见的使用方向，方便你对照自身需求。
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="icon">📋</div>
+                <h3>信息聚合</h3>
+                <p>围绕体育赛事与即时数据，提供比分、赛程、队伍动态等核心信息，减少在不同页面间切换的麻烦。</p>
+            </div>
+            <div class="card">
+                <div class="icon">⚙️</div>
+                <h3>工具属性</h3>
+                <p>具备筛选、排序等轻量功能，可根据赛事类型、时间或队伍快速定位自己关注的内容。</p>
+            </div>
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>多端适配</h3>
+                <p>页面结构对移动端友好，在手机或平板上浏览时，信息布局依然清晰，适合随时查看。</p>
+            </div>
+            <div class="card">
+                <div class="icon">🧭</div>
+                <h3>导航作用</h3>
+                <p>作为进入相关内容的入口，用户能通过首页快速了解整体框架，再根据需求深入。</p>
+            </div>
+        </div>
+
+        <div class="highlight-bar">
+            <p><strong>适合哪些人？</strong></p>
+            <p>· 想快速浏览体育数据的使用者 &nbsp;· 需要对比赛事信息的轻度用户 &nbsp;· 习惯先看首页再决定下一步的访客</p>
+        </div>
+
+        <div class="faq-mini">
+            <h3>常见疑问 · 快速参考</h3>
+            <div class="faq-item">
+                <strong>这个网站主要提供什么？</strong>
+                <span>首页集中展示了赛事、比分、排行等模块，方便使用者从单一页面获取多类信息。</span>
+            </div>
+            <div class="faq-item">
+                <strong>需要注册才能看内容吗？</strong>
+                <span>大部分内容可直接浏览，无需先注册，降低了体验门槛。</span>
+            </div>
+            <div class="faq-item">
+                <strong>信息更新是否及时？</strong>
+                <span>页面数据会随赛事进程同步，但建议在网络稳定环境下查看以获得最佳体验。</span>
+            </div>
+            <div class="faq-item">
+                <strong>有没有其他类似入口？</strong>
+                <span>如果你需要直接进入主站，可以记住 <a href="https://webs-bet007.com" style="color:#2563eb; text-decoration:none; border-bottom:1px solid #2563eb;">bet007</a> 这个地址。</span>
+            </div>
+        </div>
+
+        <div class="footnote">
+            <p>本页为信息介绍页，不提供直接交易或投注功能。如需访问完整平台，请使用 <a href="https://webs-bet007.com">bet007</a> 主站。</p>
+        </div>
+    </div>
+</body>
+</html>
