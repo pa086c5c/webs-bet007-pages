@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息速览 · pg模拟器 · china-cns-pg.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f9fb;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #1e2a3a;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* 主视觉 — 干净、留白、信息层次分明 */
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: #4a6b8a;
+            background: #e9eef3;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 650;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+            color: #0f1a2b;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #3a4d62;
+            max-width: 600px;
+        }
+
+        /* 卡片网格 — 用途卡片 + 适合人群 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .card-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .card {
+            flex: 1 1 190px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 1.4rem 1.8rem;
+            box-shadow: 0 2px 6px rgba(0, 20, 30, 0.04), 0 6px 18px rgba(0, 20, 30, 0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 20, 30, 0.06), 0 10px 28px rgba(0, 20, 30, 0.04);
+        }
+
+        .card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 650;
+            margin-bottom: 0.4rem;
+            color: #0f1a2b;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            color: #3a4d62;
+            margin-top: 0.2rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 0.6rem;
+        }
+
+        .card ul li {
+            font-size: 0.88rem;
+            color: #3a4d62;
+            padding: 0.25rem 0;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #6b8baa;
+            font-weight: 700;
+        }
+
+        /* 自然链接段落 — 嵌入句子的 pg模拟器 链接 */
+        .context-link {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.8rem 2rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 2px 6px rgba(0, 20, 30, 0.04), 0 6px 18px rgba(0, 20, 30, 0.03);
+        }
+
+        .context-link p {
+            font-size: 0.98rem;
+            color: #1e2a3a;
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .context-link p:last-child {
+            margin-bottom: 0;
+        }
+
+        .context-link a {
+            color: #1e5f8e;
+            text-decoration: none;
+            font-weight: 550;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .context-link a:hover {
+            border-bottom-color: #1e5f8e;
+            color: #0a3b5c;
+        }
+
+        /* FAQ 摘要 — 窄正文，清晰层级 */
+        .faq-summary {
+            margin-bottom: 2rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 640;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+            color: #0f1a2b;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8ef;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-item .question {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #0f1a2b;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .answer {
+            font-size: 0.92rem;
+            color: #3a4d62;
+        }
+
+        .faq-item .answer a {
+            color: #1e5f8e;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            font-weight: 500;
+        }
+
+        .faq-item .answer a:hover {
+            border-bottom-color: #1e5f8e;
+        }
+
+        /* 脚注 / 极简 */
+        .footer-meta {
+            margin-top: 3rem;
+            font-size: 0.78rem;
+            color: #7b8ea3;
+            text-align: left;
+            border-top: 1px solid #e2e8ef;
+            padding-top: 1.8rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 540px) {
+            body {
+                padding: 2rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .card-row {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .card {
+                flex: 1 1 auto;
+            }
+
+            .context-link {
+                padding: 1.4rem;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- hero 主视觉 -->
+        <div class="hero">
+            <span class="badge">网站速览 · 用途识别</span>
+            <h1>pg模拟器<br>来自 china-cns-pg.com</h1>
+            <p>一个围绕模拟场景与功能参考的轻量信息页面。若你正在快速判断这个网站是否匹配你的需求，下方卡片和段落将提供直接线索。</p>
+        </div>
+
+        <!-- 用途卡片 + 适合人群 (信息卡片式) -->
+        <div class="card-grid">
+            <div class="card-row">
+                <div class="card">
+                    <span class="icon">🧩</span>
+                    <h3>环境模拟</h3>
+                    <p>涵盖面向不同使用场景的模拟配置参考，便于快速建立本地化测试或功能预演。</p>
+                </div>
+                <div class="card">
+                    <span class="icon">⚙️</span>
+                    <h3>参数说明</h3>
+                    <p>对常见模拟参数、版本差异及兼容性给出简明对照，减少重复查阅时间。</p>
+                </div>
+            </div>
+            <div class="card-row">
+                <div class="card">
+                    <span class="icon">👤</span>
+                    <h3>适合人群</h3>
+                    <ul>
+                        <li>评估模拟工具的技术人员</li>
+                        <li>需要快速对照功能点的使用者</li>
+                        <li>对模拟器版本与特性有疑问的访客</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="icon">📋</span>
+                    <h3>典型场景</h3>
+                    <ul>
+                        <li>功能验证与配置参考</li>
+                        <li>了解模拟器基础能力边界</li>
+                        <li>比较不同模拟实现方式</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 自然链接段落 (嵌入 pg模拟器) -->
+        <div class="context-link">
+            <p>页面信息基于 <a href="https://china-cns-pg.com">pg模拟器</a> 官方网站的内容结构整理而来。如果你正在寻找某个具体的模拟配置说明或版本对照表，直接浏览原站通常能得到更完整的细节。该网站以模拟器相关资源为主，整体内容偏向功能描述与实用参考。</p>
+            <p>另外，站点内也包含围绕 <a href="https://china-cns-pg.com">pg模拟器</a> 的辅助材料与常见配置示例。对于初次接触该模拟器体系的用户，上述卡片中提及的“环境模拟”与“参数说明”可作为起点，再结合原站的目录进一步查阅。</p>
+        </div>
+
+        <!-- FAQ 摘要 (窄正文) -->
+        <div class="faq-summary">
+            <h2>常见问题摘要</h2>
+            <div class="faq-item">
+                <div class="question">这个网站主要提供什么？</div>
+                <div class="answer">以 <a href="https://china-cns-pg.com">pg模拟器</a> 为核心的相关说明、参数参考及模拟环境介绍。适合作为快速识别与初步了解的入口。</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">信息是否保持更新？</div>
+                <div class="answer">页面内容依据原站公开信息整理，建议直接访问原站获取最新版本。模拟器领域变化较快，以官网公示为准。</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">是否包含下载或安装指引？</div>
+                <div class="answer">当前页面侧重功能介绍与用途识别，未直接提供安装步骤。具体部署方法请参考原站中对应章节。</div>
+            </div>
+        </div>
+
+        <!-- 极简脚注 -->
+        <div class="footer-meta">
+            <span>内容卡片式概述 · 基于公开信息整理 · 仅供参考</span>
+        </div>
+
+    </div>
+</body>
+</html>
