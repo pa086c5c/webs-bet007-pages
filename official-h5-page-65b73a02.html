@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pg模拟器 · 信息卡片介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9fafb;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1.2rem 4rem;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+            color: #0f172a;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 2.8rem;
+            border-left: 3px solid #3b82f6;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 2.5rem 0 1rem 0;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        h2:before {
+            content: "▍";
+            color: #3b82f6;
+            font-weight: 300;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.4rem 1.6rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f6;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.35rem;
+        }
+
+        .card p, .card li {
+            font-size: 0.94rem;
+            color: #334155;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+            margin: 0.4rem 0 0.2rem;
+        }
+        .card li {
+            margin-bottom: 0.25rem;
+        }
+
+        .highlight-link {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #bdd3ff;
+            font-weight: 450;
+        }
+        .highlight-link:hover {
+            border-bottom-color: #2563eb;
+            color: #1d4ed8;
+        }
+
+        /* 人群标签 */
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.75rem;
+        }
+
+        .tag {
+            background: #f1f4f9;
+            padding: 0.25rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #1e293b;
+            letter-spacing: 0.01em;
+        }
+
+        .tag-blue {
+            background: #e8f0fe;
+            color: #1e40af;
+        }
+
+        .minor-note {
+            display: block;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.8rem;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-q {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #0f172a;
+        }
+        .faq-a {
+            color: #475569;
+            font-size: 0.94rem;
+        }
+
+        hr {
+            margin: 2rem 0 1rem;
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.84rem;
+            color: #94a3b8;
+            text-align: center;
+            border-top: 1px solid #eef2f6;
+            padding-top: 1.8rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            body { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.8rem; }
+            .card { padding: 1rem 1.2rem; }
+            .subhead { font-size: 0.88rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>pg模拟器 · 简明指南</h1>
+    <div class="subhead">信息卡片 · 快速了解用途与场景</div>
+
+    <!-- 主视觉卡片 -->
+    <div class="card" style="margin-bottom: 1.6rem;">
+        <div class="card-title">🎮 什么是 pg模拟器</div>
+        <p>pg模拟器 是一套面向 H5 环境的交互模拟方案，专注于提供接近原生体验的操作反馈与界面映射。它并非仿真器，而是一组经过优化的前端适配逻辑，帮助开发者在移动端快速验证页面状态与响应流程。</p>
+        <p style="margin-top: 0.6rem;">如需直接体验或部署，可访问 <a href="https://official-h5-pg.com" class="highlight-link">pg模拟器</a> 获取最新版本与文档。</p>
+    </div>
+
+    <!-- 用途卡片 (信息密度稍高) -->
+    <h2>用途卡片</h2>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title">📱 交互预览与调试</div>
+            <p>在开发管线中，pg模拟器 提供无后端依赖的界面模拟层，支持手势、转场、输入态等常见交互模式。适合与原型工具配合，降低联调前的前端等待时间。</p>
+            <ul>
+                <li>无头模式 / 可视化切换</li>
+                <li>自定义参数注入</li>
+                <li>轻量级日志面板</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-title">🧩 组件行为覆盖</div>
+            <p>可针对特定组件（弹窗、滑条、下拉、加载态等）配置不同的响应策略，快速比对不同逻辑分支下的 UI 表现。pg模拟器 的规则引擎允许按场景分组。</p>
+            <p style="margin-top: 0.4rem;">典型用例：表单校验反馈、多步骤流程回退、空状态/错误态模拟。</p>
+        </div>
+        <div class="card">
+            <div class="card-title">⚙️ 集成友好的接入点</div>
+            <p>通过单文件注入或模块导入即可激活，不侵入原有业务逻辑。支持 iframe 沙盒环境与独立窗口两种运行模式。</p>
+        </div>
+    </div>
+
+    <!-- 适合人群 (使用标签与短描述) -->
+    <h2>适合人群</h2>
+    <div class="card">
+        <div class="tag-group">
+            <span class="tag">前端开发者</span>
+            <span class="tag">交互设计师</span>
+            <span class="tag">QA 测试</span>
+            <span class="tag">技术写作</span>
+            <span class="tag">产品原型验证</span>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.94rem;">无论你是需要快速查看组件在不同机型下的表现，还是希望为文档提供可交互的演示片段，<a href="https://official-h5-pg.com" class="highlight-link">pg模拟器</a> 都能作为轻量辅助工具嵌入工作流。无需复杂环境配置，打开页面即可开始。</p>
+        <p class="minor-note">建议配合浏览器开发者工具使用，获得更完整的调试视图。</p>
+    </div>
+
+    <!-- 自然链接段落 + FAQ 摘要 -->
+    <h2>访问提醒与 FAQ 摘要</h2>
+    <div class="card">
+        <div class="faq-item">
+            <div class="faq-q">🔹 需要注册或付费吗？</div>
+            <div class="faq-a">当前版本完全免费，无需注册。所有功能通过页面内配置面板直接使用。未来若有变化会以官方说明为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">🔹 移动端是否兼容？</div>
+            <div class="faq-a">兼容主流现代浏览器（Chrome、Safari、Edge），部分高级手势模拟依赖 touch API，建议在真实设备或模拟器模式下测试。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">🔹 遇到问题怎么办？</div>
+            <div class="faq-a">优先查阅页面内置的帮助面板，或直接访问 <a href="https://official-h5-pg.com" class="highlight-link">pg模拟器</a> 获取最新更新与反馈渠道。</div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.92rem; color: #334155;">一句话提醒：pg模拟器 面向技术验证与流程演示，请勿在生产环境中直接依赖未经评估的实验性特性。保持浏览器版本更新可减少兼容差异。</p>
+    </div>
+
+    <hr />
+
+    <div class="footer-note">
+        <span>信息卡片 · 简明指南 · 仅供技术参考</span><br>
+        <span style="display: inline-block; margin-top: 0.3rem;">页面内容不构成任何承诺，实际体验以官方版本为准</span>
+    </div>
+</div>
+</body>
+</html>
